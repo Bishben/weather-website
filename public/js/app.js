@@ -3,6 +3,8 @@ const search = document.querySelector('input')
 const messageOne = document.querySelector('#messageOne')
 const mssageTwo = document.querySelector('#messageTwo')
 
+console.log("Hello user")
+
 weatherForm.addEventListener('submit',(event) => {
     event.preventDefault()
     messageOne.textContent = "Searching..."

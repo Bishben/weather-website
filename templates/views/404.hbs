@@ -4,15 +4,16 @@
 
 <head>
     <title>404</title>
+    <link rel="icon" href="/img/weather.png">
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 
 <body>
     <div class="main-content">
-        <h1>NOTHING HERE</h1>
-        {{>nav}}
-        <p>404 Error: Page Not Found</p>
+        {{>header}}
+        <p>{{errorMessage}}</p>
     </div>
+    
     {{>footer}}
 </body>
 

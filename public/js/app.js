@@ -1,9 +1,24 @@
-const button = document.querySelector('#button')
-const div = document.querySelector('#div')
+const weatherForm = document.querySelector('form')
+const search = document.querySelector('input')
+const messageOne = document.querySelector('#messageOne')
+const mssageTwo = document.querySelector('#messageTwo')
 
-button.addEventListener('click',(event)=>{
-    div.innerHTML = "<p>Bishben is Thinking</p><img src='/img/Iphone-spinner-2.gif' alt='...'> "
-    setTimeout(() => {
-        div.innerHTML="<p><b><i>Obviously I Love you Dummy, I don't have to think bout that. IMAGINE ITS BEEN 10 MONTHS - just think about it 2 months and its a YEAR❤️</i></b></p>"
-    }, 3000)  
+console.log("Hello user")
+
+weatherForm.addEventListener('submit',(event) => {
+    event.preventDefault()
+    messageOne.textContent = "Searching..."
+    messageTwo.textContent = ''
+    const location = search.value
+    fetch("/weather?address="+encodeURI(location)).then((response) => {
+    response.json().then((data) => {
+        if (data.error){
+            messageOne.textContent = "No Location Found"
+            messageTwo.textContent = ""
+        } else{
+            messageOne.textContent = "Location: "+data.location
+            messageTwo.textContent = "Temperature: "+data.temp
+        }
+    })
+})
 })

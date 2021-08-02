@@ -7,7 +7,9 @@ body {
 
     display: flex;
     flex-direction: column;
-    min-height: 100vh
+    min-height: 100vh;
+    text-align: center;
+    
 }
 
 .main-content {
@@ -37,6 +39,10 @@ header a {
     text-decoration: none;
 }
 
+header a:hover{
+    color: black;
+}
+
 .portrait {
     width: 250px;
 }
@@ -46,15 +52,28 @@ input{
     padding: 8px;
 }
 
-button{
+#button {
+    padding: 15px 25px;
+    font-size: 24px;
+    text-align: center;
     cursor: pointer;
-    border: 1px solid #888888;
-    background: #888888;
-    color: white;
-    padding: 8px;
-    border-radius: 5px;
-}
-
-button:hover{
+    outline: none;
+    color: #fff;
+    background-color: #888888;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+  }
+  
+#button:hover {
     background-color: black;
 }
+  
+#button:active {
+    background-color: black;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+
+
